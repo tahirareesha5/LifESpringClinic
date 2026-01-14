@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Logo from '../Logo/Logo'
-import { FiPhone, FiMenu, FiX } from 'react-icons/fi'
+import { FiPhone, FiMenu, FiX, FiSearch, FiChevronDown, FiChevronUp } from 'react-icons/fi'
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -15,6 +15,8 @@ const navLinks = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   const router = useRouter()
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <header className={`sticky top-0 left-0 right-0 bg-white z-[1000] transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      <header className={`sticky top-0 left-0 right-0 bg-white z-[100] transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
         <div className="container flex items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <Logo />
@@ -87,7 +89,7 @@ export default function Header() {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`fixed top-0 ${isMobileMenuOpen ? 'right-0' : '-right-full'} w-[300px] h-screen bg-white z-[1001] pt-24 px-6 pb-8 transition-all duration-300 shadow-xl`}>
+      <div className={`fixed top-0 ${isMobileMenuOpen ? 'right-0' : '-right-full'} w-[300px] h-screen bg-white z-[101] pt-24 px-6 pb-8 transition-all duration-300 shadow-xl`}>
         <nav className="flex flex-col gap-2">
           {navLinks.map((link) => (
             <Link
@@ -111,7 +113,7 @@ export default function Header() {
       {/* Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-[1000]"
+          className="fixed inset-0 bg-black/50 z-[100]"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}

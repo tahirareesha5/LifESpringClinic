@@ -254,4 +254,15 @@
     color: var(--color-text-light);
     line-height: 1.75;
   }
+
+  /* Ensure Vercel badge appears above all other elements */
+  [data-vercel-toolbar] {
+    z-index: 9999 !important;
+    position: fixed !important;
+  }
+
+  /* Vercel badge specific styles */
+  iframe[title="Vercel Analytics"] {
+    z-index: 9999 !important;
+  }
 }
