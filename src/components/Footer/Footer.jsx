@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Logo from '../Logo/Logo'
 import { FiPhone, FiMail, FiMapPin, FiClock, FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiArrowRight } from 'react-icons/fi'
-import { SiNextdotjs } from 'react-icons/si'
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -138,14 +137,7 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="border-t border-white/10 py-6">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-4 opacity-70 text-sm text-center md:text-left">
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <p>© 2026 LifeSpring Health Clinic. All rights reserved.</p>
-            <div className="flex items-center gap-2 text-white/60 hover:text-white/80 transition-colors">
-              <span>Powered by</span>
-              <SiNextdotjs className="text-white" size={20} />
-              <span className="font-medium">Next.js</span>
-            </div>
-          </div>
+          <p>© 2026 LifeSpring Health Clinic. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 md:gap-8 justify-center">
             <Link href="/privacy" className="hover:text-primary-light transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-primary-light transition-colors">Terms of Service</Link>
